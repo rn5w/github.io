@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RN5W</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+
+
+  <div id="outputFigDisplay" class="fig">
+    <pre id="taag_output_text" style="float:left;margin-bottom: 0;" class="fig" contenteditable="false">
+ =================================================                
+                        ____          
+             _ __ _ __ | ___|_      __
+            | '__| '_ \|___ \ \ /\ / /
+            | |  | | | |___) \ V  V / 
+            |_|  |_| |_|____/ \_/\_/ 
+
+ =================================================
+    </pre>
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
+
+  <script>
+    $('body').terminal(
+      function(command) {
+        safeCommand = command.replace(/[^\w]/g, "");
+        if(command.length != safeCommand.length){
+          this.echo("I'm sorry Dave, I'm afraid I can't do that.\n");
+        }
+        else{
+          var cmd = safeCommand;
+
+          if (cmd.toLowerCase() === 'help') {
+            this.echo("Commands list:\n\twhoami - about me\n\tcontact - how to reach me\n");
+          }
+          
+          else if (cmd.toLowerCase() === 'whoami') {
+            this.echo("\tI know things. I do stuff.");
+            this.echo("\tI make a living from software development.");
+            this.echo("\tAfter hours I put on a batman outfit and deal with cybersecurity.\n");
+          }
+
+          else if (cmd.toLowerCase() === 'contact') {
+            this.echo("\t@:  goaway (at) rn5w.pl (it's not a fake)");
+            this.echo("\tLI: https://linkd.pl/2mckf\n")
+          }
+
+        }    
+      },
+      {
+        greetings: '[[;lightslategray;black]What I can do for you?]'
+      }
+    );
+  </script>
+ 
+</body>
+</html>

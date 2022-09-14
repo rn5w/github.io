@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: lightslategray;
+    font-family: monospace;
+}
+
+.text {
+    padding-left: 10px;
+}
+
+script {
+    color: lightslategray;
+}
