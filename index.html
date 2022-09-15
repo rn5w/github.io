@@ -11,9 +11,9 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 
-
-  <div id="outputFigDisplay" class="fig">
-    <pre id="taag_output_text" style="float:left;margin-bottom: 0;" class="fig" contenteditable="false">
+  <div class="container">
+    <div id="outputFigDisplay" class="fig">
+      <pre id="taag_output_text" style="float:left;margin-bottom: 0;" class="fig" contenteditable="false">
  =================================================                
                         ____          
              _ __ _ __ | ___|_      __
@@ -22,12 +22,12 @@
             |_|  |_| |_|____/ \_/\_/ 
 
  =================================================
-    </pre>
-    <div style="clear:both"></div>
+      </pre>
+      <div style="clear:both"></div>
+    </div>
+
+    <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
   </div>
-
-  <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
-
   <script>
     $('body').terminal(
       function(command) {
@@ -60,7 +60,7 @@
         }    
       },
       {
-        greetings: '[[;lightslategray;black]What I can do for you?]'
+        greetings: 'What I can do for you?'
       }
     );
   </script>

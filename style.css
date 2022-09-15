@@ -2,12 +2,19 @@ body {
     background-color: black;
     color: lightslategray;
     font-family: monospace;
+    font-size: x-large;
 }
 
 .text {
     padding-left: 10px;
 }
 
-script {
-    color: lightslategray;
+.container {
+    width: fit-content;
+    height: fit-content;
+}
+
+.terminal {
+    --size: x-large;
+    --color: lightslategray;
 }
