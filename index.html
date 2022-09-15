@@ -28,9 +28,9 @@
 
     <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
   
-    
+    <div id="terminal"></div>
   </div>
-  <div id="terminal"></div>
+  
   <script>
     $('#terminal').terminal(
       function(command) {
@@ -48,7 +48,8 @@
           else if (cmd.toLowerCase() === 'whoami') {
             this.echo("\tI know things. I do stuff.");
             this.echo("\tI make a living from software development.");
-            this.echo("\tAfter hours I put on a batman outfit and deal with cybersecurity.\n");
+            this.echo("\tAfter hours I put on a batman outfit");
+            this.echo("\tand deal with cybersecurity.\n")
           }
 
           else if (cmd.toLowerCase() === 'contact') {
