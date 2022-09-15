@@ -10,11 +10,12 @@ body {
 }
 
 .container {
-    width: fit-content;
-    height: fit-content;
+    /* height: auto */
 }
 
 .terminal {
-    --size: x-large;
+    
+    --size: 1.8;
     --color: lightslategray;
+    /* --background: green;     */
 }

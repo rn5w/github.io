@@ -27,9 +27,12 @@
     </div>
 
     <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
+  
+    
   </div>
+  <div id="terminal"></div>
   <script>
-    $('body').terminal(
+    $('#terminal').terminal(
       function(command) {
         safeCommand = command.replace(/[^\w]/g, "");
         if(command.length != safeCommand.length){
