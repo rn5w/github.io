@@ -1,0 +1,21 @@
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <script src='https://8x8.vc/vpaas-magic-cookie-9d9dec1f02e34c948d2a8dbb2dcc0de9/external_api.js' async></script>
+        <style>html, body, #jaas-container { height: 100%; }</style>
+        <script type="text/javascript">
+          window.onload = () => {
+            const api = new JitsiMeetExternalAPI("8x8.vc", {
+              roomName: "vpaas-magic-cookie-9d9dec1f02e34c948d2a8dbb2dcc0de9/SampleAppResidentMeaningsCalculateLiterally",
+              parentNode: document.querySelector('#jaas-container'),
+							// Make sure to include a JWT if you intend to record,
+							// make outbound calls or use any other premium features!
+							// jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtOWQ5ZGVjMWYwMmUzNGM5NDhkMmE4ZGJiMmRjYzBkZTkvYjQ5ZWMzLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE3MDQ2NjU4MjIsImV4cCI6MTcwNDY3MzAyMiwibmJmIjoxNzA0NjY1ODE3LCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtOWQ5ZGVjMWYwMmUzNGM5NDhkMmE4ZGJiMmRjYzBkZTkiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6ImF1dGgwfDY1OWIyMjdlODAyMjdiMTdhOWFmZGY0NSIsImF2YXRhciI6IiIsImVtYWlsIjoidGVzdC51c2VyQGNvbXBhbnkuY29tIn19LCJyb29tIjoiKiJ9.UGDxTj-qXGsYzwETxotTEl411t5oUdMXilV5gLkL4aQGmtqDXTn-lf-wgInZTQ_2GPXUASEafnYnXP3LYjshS1odg3DAiIFA5mDfGdJGgv3GSEgL9TurBm0gRXWfs9ri-Uk_Ss55u8PE3vzrHH4-YjeGxoi2B6FTDyCSjWRaL8k0sRSzo29HdidVUjmArmfID4GVjq_BLDriavme59wqHR24EW-AHxWsEv8ODLt9v9GNMWquZR8wL-scAPFuzkd8Hg5ICrpeD8DMwn33TFigiW_j-7UXrLZNhRtQCc0RmASwwDpcUwcn76AidvTUWHu-4-OiuetQsu2g0gsZx11jow"
+            });
+          }
+        </script>
+      </head>
+      <body><div id="jaas-container" /></body>
+    </html>
+  
