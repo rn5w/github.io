@@ -1,76 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>RN5W</title>
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RN5W</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <pre>
+             ____           
+  _ __ _ __ | ___|_      __ 
+ | '__| '_ \|___ \ \ /\ / / 
+ | |  | | | |___) \ V  V /  
+ |_|  |_| |_|____/ \_/\_/   
+                        Terminal       
+        </pre>
+    </header>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+    <div class="container">
+        <section class="section">
+            <h2>$ whoami</h2>
+            <div class="section-content">
+                I know things. I do stuff.
+                I make a living from software development.
+                After hours I put on a batman outfit
+                and deal with cybersecurity.
+            </div>
+        </section>
 
-  <div class="container">
-    <div id="outputFigDisplay" class="fig">
-      <pre id="taag_output_text" style="float:left;margin-bottom: 0;" class="fig" contenteditable="false">
- =================================================                
-                        ____          
-             _ __ _ __ | ___|_      __
-            | '__| '_ \|___ \ \ /\ / /
-            | |  | | | |___) \ V  V / 
-            |_|  |_| |_|____/ \_/\_/ 
-
- =================================================
-                  ┌─────────────────────────────┐ 
-                  ╞══ SITE UNDER CONSTRUCTION ══╡
-                  └─────────────────────────────┘
-      </pre>
-      <div style="clear:both"></div>
+        <section class="section">
+            <h2>$ contact</h2>
+            <div class="section-content">
+                <div><span>@:</span> <a href="mailto:goaway (at) rn5w.pl">goaway (at) rn5w.pl</a>&nbsp;&nbsp;&nbsp;&nbsp;(it's not a fake)</div>
+                <div><span>LI:</span> <a href="https://linkd.pl/2mckf" target="_blank">https://linkd.pl/2mckf</a></div>
+            </div>
+        </section>
     </div>
 
-    <div class="text" style="padding-top: -20px;">Tip: If you don't know what to do - write 'help'</div>
-  
-    <div id="terminal"></div>
-  </div>
-  
-  <script>
-    $('#terminal').terminal(
-      function(command) {
-        safeCommand = command.replace(/[^\w]/g, "");
-        if(command.length != safeCommand.length){
-          this.echo("I'm sorry Dave, I'm afraid I can't do that.\n");
-        }
-        else{
-          var cmd = safeCommand;
-
-          if (cmd.toLowerCase() === 'help') {
-            this.echo("Commands list:\n\twhoami - about me\n\tcontact - how to reach me\n");
-          }
-          
-          else if (cmd.toLowerCase() === 'whoami') {
-            this.echo("\tI know things. I do stuff.");
-            this.echo("\tI make a living from software development.");
-            this.echo("\tAfter hours I put on a batman outfit");
-            this.echo("\tand deal with cybersecurity.\n")
-          }
-
-          else if (cmd.toLowerCase() === 'contact') {
-            this.echo("\t@:  goaway (at) rn5w.pl (it's not a fake)");
-            this.echo("\tLI: https://linkd.pl/2mckf\n")
-          }
-
-          else{
-            this.echo("I'm sorry Dave, I'm afraid I can't do that.\n");
-          }
-
-        }    
-      },
-      {
-        greetings: 'What I can do for you?'
-      }
-    );
-  </script>
- 
+    <footer>
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        &nbsp;RN5W's Terminal - All rights reserved.
+    </footer>
 </body>
 </html>
