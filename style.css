@@ -4,6 +4,7 @@ body {
     font-family: "Courier New", Courier, monospace;
     margin: 0;
     padding: 0;
+    /* Usuwamy lub zostawiamy flexbox, jeśli był wcześniej */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -25,6 +26,7 @@ h2 {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    /* Jeśli jest flex-grow, pozostawiamy */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -83,6 +85,7 @@ a:hover {
 footer {
     text-align: center;
     font-size: 0.9em;
+    /* Zostawiamy margin-top: auto; jeśli było */
     margin-top: auto;
     color: #009900;
     padding: 10px;
@@ -91,6 +94,10 @@ footer {
 @media only screen and (max-width: 600px) {
     body {
         font-size: 14px;
+        /* Dodajemy flexbox i min-height tylko dla urządzeń mobilnych */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     pre {
@@ -101,6 +108,7 @@ footer {
         width: 90%;
         padding-top: 5vh;
         padding-bottom: 0;
+        flex-grow: 1;
     }
 
     .section {
@@ -109,5 +117,7 @@ footer {
 
     footer {
         padding: 5px;
+        font-size: 0.8em;
+        margin-top: auto; /* Dodajemy margin-top: auto; w stopce */
     }
 }
