@@ -52,6 +52,14 @@ pre {
     flex-direction: column;
 }
 
+.after-email {
+    display: inline-block;
+    text-indent: 25px;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
 a {
     color: #00aa00;
     font-weight: bold;
@@ -69,6 +77,7 @@ a:hover {
 
 .section-content div span {
     width: 30px;
+    display: inline-block;
 }
 
 footer {
@@ -90,6 +99,6 @@ footer {
 
     .container {
         width: 90%;
-        padding-top: 20vh;
+        padding-top: 5vh;
     }
 }
