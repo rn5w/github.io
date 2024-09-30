@@ -100,5 +100,14 @@ footer {
     .container {
         width: 90%;
         padding-top: 5vh;
+        padding-bottom: 0;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    footer {
+        padding: 5px;
     }
 }
