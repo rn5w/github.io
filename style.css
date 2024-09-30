@@ -48,8 +48,6 @@ pre {
     border-left: 5px solid #009900;
     white-space: pre-line;
     color: #009900;
-    display: flex;
-    flex-direction: column;
 }
 
 .after-email {
@@ -86,6 +84,11 @@ footer {
     margin-top: auto;
     color: #009900;
     padding: 10px;
+    position: fixed; /* Stopka jest zawsze na dole */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Pełna szerokość stopki */
+    background-color: black;
 }
 
 @media only screen and (max-width: 600px) {
@@ -98,16 +101,15 @@ footer {
     }
 
     .container {
-        width: 90%;
-        padding-top: 5vh;
-        padding-bottom: 0;
+        padding-top: 5vh; /* Mniejszy odstęp na górze na telefonach */
     }
 
     .section {
-        margin-bottom: 20px;
+        margin-bottom: 15px; /* Zmniejszenie przerwy między sekcjami */
     }
 
     footer {
         padding: 5px;
+        font-size: 0.8em; /* Mniejsza stopka na mniejszych ekranach */
     }
 }
