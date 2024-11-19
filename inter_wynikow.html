@@ -19,8 +19,8 @@
             color: #ffffff;
         }
         .container {
-            width: 90%; /* Domyślna szerokość */
-            max-width: 600px; /* Maksymalna szerokość dla dużych ekranów */
+            width: 90%;
+            max-width: 600px;
             margin: 20px;
             padding: 20px;
             background-color: #2e2e2e;
@@ -67,27 +67,16 @@
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
+            table-layout: fixed;
         }
         th, td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #4e4e4e;
+            word-wrap: break-word;
         }
         th {
             background-color: #3e3e3e;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px; /* Zmniejszenie paddingu na mniejszych ekranach */
-            }
-            button {
-                width: 100%; /* Przycisk zajmuje całą szerokość */
-                margin-bottom: 10px; /* Dodanie odstępów między przyciskami */
-            }
-            button.clear {
-                margin-right: 0; /* Usunięcie marginesu przy ostatnim przycisku */
-            }
         }
     </style>
 </head>
@@ -142,35 +131,35 @@
 
             if (cholesterol && hdl) {
                 const tc_hdl_ratio = cholesterol / hdl;
-                results.push(["TC/HDL", tc_hdl_ratio.toFixed(2), "Cholesterol całkowity do HDL", tc_hdl_ratio < 3.5 ? "Idealny" : tc_hdl_ratio < 4.5 ? "Dobry" : "Ryzyko"]);
+                results.push(["TC/HDL", tc_hdl_ratio.toFixed(2), "Cholesterol całkowity do HDL", tc_hdl_ratio < 3.5 ? "Idealny TC/HDL" : tc_hdl_ratio < 4.5 ? "Dobry TC/HDL" : "Ryzyko TC/HDL"]);
             } else {
                 results.push(["TC/HDL", "N/A", "Cholesterol całkowity do HDL", "N/A"]);
             }
 
             if (triglycerides && hdl) {
                 const tg_hdl_ratio = triglycerides / hdl;
-                results.push(["TG/HDL", tg_hdl_ratio.toFixed(2), "Triglicerydy do HDL", tg_hdl_ratio < 2.0 ? "Idealny" : "Ryzyko insulinooporności"]);
+                results.push(["TG/HDL", tg_hdl_ratio.toFixed(2), "Triglicerydy do HDL", tg_hdl_ratio < 2.0 ? "Idealny TG/HDL" : "Ryzyko insulinooporności TG/HDL"]);
             } else {
                 results.push(["TG/HDL", "N/A", "Triglicerydy do HDL", "N/A"]);
             }
 
             if (ldl && hdl) {
                 const ldl_hdl_ratio = ldl / hdl;
-                results.push(["LDL/HDL", ldl_hdl_ratio.toFixed(2), "LDL do HDL", ldl_hdl_ratio < 2.0 ? "Idealny" : ldl_hdl_ratio <= 3.5 ? "Umiarkowane ryzyko" : "Wysokie ryzyko"]);
+                results.push(["LDL/HDL", ldl_hdl_ratio.toFixed(2), "LDL do HDL", ldl_hdl_ratio < 2.0 ? "Idealny LDL/HDL" : ldl_hdl_ratio <= 3.5 ? "Umiarkowane ryzyko LDL/HDL" : "Wysokie ryzyko LDL/HDL"]);
             } else {
                 results.push(["LDL/HDL", "N/A", "LDL do HDL", "N/A"]);
             }
 
             if (glucose && insulin) {
                 const gi_ratio = glucose / insulin;
-                results.push(["G/I", gi_ratio.toFixed(2), "Glukoza do Insulina", gi_ratio > 4.5 ? "Prawidłowy" : "Ryzyko insulinooporności"]);
+                results.push(["G/I", gi_ratio.toFixed(2), "Glukoza do Insulina", gi_ratio > 4.5 ? "Prawidłowy G/I" : "Ryzyko insulinooporności G/I"]);
             } else {
                 results.push(["G/I", "N/A", "Glukoza do Insulina", "N/A"]);
             }
 
             if (glucose && insulin) {
                 const homa_ir = (glucose * insulin) / 405;
-                results.push(["HOMA-IR", homa_ir.toFixed(2), "Wskaźnik insulinooporności", homa_ir < 2.0 ? "Prawidłowy" : "Insulinooporność"]);
+                results.push(["HOMA-IR", homa_ir.toFixed(2), "Wskaźnik insulinooporności", homa_ir < 2.0 ? "Prawidłowy HOMA-IR" : "Insulinooporność HOMA-IR"]);
             } else {
                 results.push(["HOMA-IR", "N/A", "Wskaźnik insulinooporności", "N/A"]);
             }
