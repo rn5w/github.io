@@ -19,7 +19,8 @@
             color: #ffffff;
         }
         .container {
-            width: 600px; /* Stała szerokość */
+            width: 90%; /* Domyślna szerokość */
+            max-width: 600px; /* Maksymalna szerokość dla dużych ekranów */
             margin: 20px;
             padding: 20px;
             background-color: #2e2e2e;
@@ -75,6 +76,19 @@
         th {
             background-color: #3e3e3e;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px; /* Zmniejszenie paddingu na mniejszych ekranach */
+            }
+            button {
+                width: 100%; /* Przycisk zajmuje całą szerokość */
+                margin-bottom: 10px; /* Dodanie odstępów między przyciskami */
+            }
+            button.clear {
+                margin-right: 0; /* Usunięcie marginesu przy ostatnim przycisku */
+            }
+        }
     </style>
 </head>
 <body>
@@ -126,7 +140,6 @@
 
             const results = [];
 
-            // Obliczenia z obsługą brakujących danych
             if (cholesterol && hdl) {
                 const tc_hdl_ratio = cholesterol / hdl;
                 results.push(["TC/HDL", tc_hdl_ratio.toFixed(2), "Cholesterol całkowity do HDL", tc_hdl_ratio < 3.5 ? "Idealny" : tc_hdl_ratio < 4.5 ? "Dobry" : "Ryzyko"]);
@@ -162,9 +175,8 @@
                 results.push(["HOMA-IR", "N/A", "Wskaźnik insulinooporności", "N/A"]);
             }
 
-            // Wyświetlenie wyników
             const tableBody = document.querySelector("#results tbody");
-            tableBody.innerHTML = ""; // Czyszczenie poprzednich wyników
+            tableBody.innerHTML = "";
             results.forEach(row => {
                 const tr = document.createElement("tr");
                 row.forEach(cell => {
